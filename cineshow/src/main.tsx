@@ -13,7 +13,7 @@ const route = createBrowserRouter([
   },
   {
     path:"/card",
-    element:<CardMovie src="https://cinema10.com.br/upload/filmes/filmes_11149_velozes-e-furiosos-10-poster-nacional.jpg" title="Velozes e Furiosos 10"></CardMovie>
+    element:<CardMovie src="https://cinema10.com.br/upload/filmes/filmes_11149_velozes-e-furiosos-10-poster-nacional.jpg" title="Velozes e Furiosos 10 awefaefeafefe"></CardMovie>
   }
 ])
 

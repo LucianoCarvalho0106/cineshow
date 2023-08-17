@@ -5,10 +5,35 @@ export const Card = styled.div`
     flex-direction: column;
     justify-content: center;
     width: 170px;
+    height: 260px;
     border-radius: 6px;
-    box-shadow: 0px 10px 15px -3px rgba(0,0,0,0.1);
+    box-shadow: -4px 29px 22px -18px rgba(0,0,0,0.5);
+    cursor: pointer;
+    overflow: hidden;
+    
+    &:hover img{
+        transform: scale(1.05);
+    }
     & img{
         border-top-right-radius:6px;
         border-top-left-radius:6px;
+        object-fit: cover;
+        flex: 1;
+        overflow: hidden;
+        transition: .4s;
+    }
+    & p{
+        width: 170px;
+        padding:5px;
+        font-weight: 500;
+        height:3em;
+        line-height: 30px;
+        text-align:center;
+        white-space: nowrap; 
+        overflow: hidden; 
+        text-overflow: ellipsis;
+        z-index:5;
+        background-color: #032541;
+        color: #fff;
     }
 `
