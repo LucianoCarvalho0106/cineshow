@@ -4,28 +4,32 @@ import {styled} from "styled-components"
 export const HeaderMenu = styled.header`
     position: relative;
     display: flex;
+    justify-content: space-between;
     align-items: center;
-    justify-content: space-between; 
     gap: 1em;
     padding: 1em 3em;
     width: 100%;
     max-width: 1600px;
     margin: 0 auto;
     box-shadow: 0px 21px 15px -3px rgba(0,0,0,0.1);
+    z-index:10;
     & #spanFilmes ~ .activeMenu{
         display: flex;
         flex-direction: column;
         padding: 1em;
+        z-index:30;
     }
 
     & #spanSeries ~ .activeMenu{
         display: flex;
         flex-direction: column;
+        z-index:30;
     }
 
     & #spanPessoas~ .activeMenu{
         display: flex;
         flex-direction: column;
+        z-index:30;
     }
 
     .activeSideBar{
@@ -37,13 +41,15 @@ export const HeaderMenu = styled.header`
 export const Menu = styled.div`
     display: flex;
     align-items: center;
+    justify-content:space-between;
     gap: 3em;
     position: relative;
+    
     & #filmes, #series,#pessoas{
         display: none;
         position: absolute;
         top:2em;
-        width: 200px;
+        width: 90%;
         box-shadow: 7px 9px 14px -6px rgba(0,0,0,0.75);
         padding: 8px;
         background-color: rgb(3,37,65);
@@ -66,6 +72,12 @@ export const Menu = styled.div`
                 background-color: #093b5e;
             }
         }
+        @media (max-width:821px){
+           width: 100%;
+           & nav{
+            width: 100%;
+           }
+    }
     }
     & span:hover{
         cursor: pointer;
@@ -74,11 +86,14 @@ export const Menu = styled.div`
     & div{
         display: flex;
         flex-direction: column;
+        width: 100%;
     }
 
     @media (max-width:821px){
         flex-direction: column;
         margin-bottom:1em;
+        width: 100%;
+        text-align:center;
     }
 
 `
@@ -119,8 +134,10 @@ export const Search = styled.div`
 
 export const ContentMenu = styled.div`
     display: flex;
-    align-items: center;
-    overflow-x:hidden; 
+    justify-content: space-between;
+    align-items: center; 
+    overflow-x:hidden;
+    width:100%;
     gap:1em;
      @media (max-width:821px){
         position: absolute;

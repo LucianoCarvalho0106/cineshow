@@ -16,11 +16,11 @@ const Header = () => {
     const [searchInput,setSearchInput] = useState<any>([])
     
 
-    const showMenuFilmes = ()=>activeFilmes === "" ? setActiveFilmes("activeMenu") : setActiveFilmes("")
+    const showMenuFilmes = ()=>{activeFilmes === "" ? setActiveFilmes("activeMenu") : setActiveFilmes("")}
     const showMenuSeries = ()=>activeSeries === "" ? setActiveSeries("activeMenu") : setActiveSeries("")
     const showMenuPessoas = ()=>activePessoas === "" ? setActivePessoas("activeMenu") : setActivePessoas("")
 
-    const showSideBar = ()=>activeSideBar === "" ? setActiveSideBars("activeSideBar") : setActiveSideBars("")
+    const showSideBar = ()=>{ activeSideBar === "" ? setActiveSideBars("activeSideBar") : setActiveSideBars("")}
 
 
   return (

@@ -1,14 +1,16 @@
 import {Card} from "./CardMovie.style"
 
-type Props = {
+
+interface Props {
     src:string,
-    title:string
+    title:string,
+    id:number,
 }
 
-const CardMovie = ({src,title}: Props) => {
+const CardMovie = ({src,title,id}: Props) => {
   return (
-    <Card>
-        <img src={src} alt="vídeo" />
+    <Card id={`${id}`}>
+        <img src={src} alt="vídeo" loading="lazy" />
         <p>{title}</p>
     </Card>
   )

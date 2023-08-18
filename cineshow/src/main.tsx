@@ -1,27 +1,36 @@
-import React from 'react'
-import ReactDOM from 'react-dom/client'
-import {createBrowserRouter,RouterProvider,} from "react-router-dom";
+import React, { useState } from 'react';
+import ReactDOM from 'react-dom/client';
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import { GlobalStyle } from '../GlobalStyle';
-import { ChakraProvider } from '@chakra-ui/react'
+import { ChakraProvider } from '@chakra-ui/react';
 import Home from './pages/Home/Home';
-import CardMovie from './components/CardMovie/CardMovie';
+import MovieSingle from './pages/MovieSingle/MovieSingle';
+import Context from './context/context';
 
-const route = createBrowserRouter([
-  {
-    path:"/",
-    element: <Home></Home>
-  },
-  {
-    path:"/card",
-    element:<CardMovie src="https://cinema10.com.br/upload/filmes/filmes_11149_velozes-e-furiosos-10-poster-nacional.jpg" title="Velozes e Furiosos 10 awefaefeafefe"></CardMovie>
-  }
-])
+const App = () => {
+  const route = createBrowserRouter([
+    {
+      path: '/',
+      element: <Home></Home>,
+    },
+    {
+      path: '/movieSingle',
+      element: <MovieSingle></MovieSingle>,
+    },
+  ]);
 
-ReactDOM.createRoot(document.getElementById('root')!).render(
-  <React.StrictMode>
-    <ChakraProvider>
-       <RouterProvider router={route}></RouterProvider>
-    </ChakraProvider>
-    <GlobalStyle></GlobalStyle>
-  </React.StrictMode>,
-)
+  const [contextValue, setContextValue] = useState<never>();
+
+  return (
+    <React.StrictMode>
+      <ChakraProvider>
+        <Context.Provider value={[contextValue, setContextValue]}>
+          <RouterProvider router={route}></RouterProvider>
+        </Context.Provider>
+        <GlobalStyle></GlobalStyle>
+      </ChakraProvider>
+    </React.StrictMode>
+  );
+};
+
+ReactDOM.createRoot(document.getElementById('root')!).render(<App />);
