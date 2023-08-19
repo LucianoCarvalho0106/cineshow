@@ -1,11 +1,11 @@
-import React, { useState } from 'react';
+import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import { GlobalStyle } from '../GlobalStyle';
 import { ChakraProvider } from '@chakra-ui/react';
 import Home from './pages/Home/Home';
 import MovieSingle from './pages/MovieSingle/MovieSingle';
-import Context from './context/context';
+
 
 const App = () => {
   const route = createBrowserRouter([
@@ -19,14 +19,11 @@ const App = () => {
     },
   ]);
 
-  const [contextValue, setContextValue] = useState<never>();
 
   return (
     <React.StrictMode>
       <ChakraProvider>
-        <Context.Provider value={[contextValue, setContextValue]}>
           <RouterProvider router={route}></RouterProvider>
-        </Context.Provider>
         <GlobalStyle></GlobalStyle>
       </ChakraProvider>
     </React.StrictMode>

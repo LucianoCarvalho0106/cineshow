@@ -1,15 +1,18 @@
-import {MovieSilgleContent,ContentAll,DivImgFilme,Title,Avaliacao,Sinopse,Right,Footer,Elenco} from "./MovieSingle.style"
+import {MovieSilgleContent,ContentAll,DivImgFilme,Title,Avaliacao,Sinopse,Right,ButtonTrailer} from "./MovieSingle.style"
 import Header from "../../components/Header/Header"
-import Context from "../../context/context"
-import {useContext,useEffect} from "react"
+import {useEffect,useRef} from "react"
 import {AiOutlineStar} from "react-icons/ai"
 import {BiTimeFive} from "react-icons/bi"
+import {Link} from "react-router-dom"
 
 const MovieSingle = () => {
-    const [data,setData] = useContext(Context)
+    
+    const dataLocal = localStorage.getItem("dataFilme")
+    const data = JSON.parse(dataLocal!)
+    
     useEffect(()=>{
         console.log(data)
-    },[])
+    })
   return (
     <>
     <Header></Header>
@@ -35,9 +38,9 @@ const MovieSingle = () => {
                 }
             </Right>
         </ContentAll>
-        <Footer>
-            <Elenco>Elenco Principal</Elenco>
-        </Footer>
+       <Link style={{display:"block",margin: "0 auto"}} target="_blank" to={`https://www.youtube.com/results?search_query=${data.original_title}+trailer`}>
+        <ButtonTrailer>Trailer</ButtonTrailer>
+       </Link> 
         
     </MovieSilgleContent>
     </>

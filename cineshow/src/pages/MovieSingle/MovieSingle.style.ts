@@ -3,8 +3,8 @@ import {styled} from "styled-components"
 export const MovieSilgleContent = styled.div`
     display: flex;
     flex-direction: column;
-    min-height: 100vh;
-    margin-top: 2em;
+    min-height: 80vh;
+    margin-top: 3em;
     gap:4em;
 `
 export const ContentAll = styled.div`
@@ -12,12 +12,13 @@ export const ContentAll = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 1em;
+    gap: 2em;
 `
 
 export const DivImgFilme = styled.div`
-    height: 290px;
-    width: 200px;
+    height: 320px;
+    width: 230px;
+    box-shadow: 16px 19px 18px -8px rgba(0,0,0,0.3);
     & img{
         height: 100%;
         width: 100%;
@@ -50,15 +51,18 @@ export const Sinopse = styled.p`
 `
 
 export const Right = styled.div`
-    max-width: 70%;
+    max-width: 50%;
 `
-
-export const Footer = styled.footer`
-    background-color: #032541;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-`
-export const Elenco = styled(Sinopse)`
+export const ButtonTrailer = styled.button`
+    border: 0;
+    outline: none;
+    border-radius: 6px;
+    background-color:#4385F3;
+    width: 15em;
+    padding:.7em 2em;
+    margin: 0 auto;
+    font-weight:600;
     color: #fff;
+    letter-spacing: 1px;
+    box-shadow: 16px 17px 18px -8px rgba(0,0,0,0.3);
 `

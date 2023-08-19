@@ -136,7 +136,6 @@ export const ContentMenu = styled.div`
     display: flex;
     justify-content: space-between;
     align-items: center; 
-    overflow-x:hidden;
     width:100%;
     gap:1em;
      @media (max-width:821px){
@@ -150,6 +149,7 @@ export const ContentMenu = styled.div`
         width: 0%;
         color: #fff;
         background-color: #032541;
+        overflow-x:hidden;
     }
 
 `

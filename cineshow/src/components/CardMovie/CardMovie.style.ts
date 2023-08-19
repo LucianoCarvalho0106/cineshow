@@ -4,8 +4,8 @@ export const Card = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: center;
-    width: 170px;
-    height: 260px;
+    width: 230px;
+    height: 300px;
     border-radius: 6px;
     box-shadow: -4px 29px 22px -18px rgba(0,0,0,0.5);
     cursor: pointer;
@@ -23,7 +23,7 @@ export const Card = styled.div`
         transition: .4s;
     }
     & p{
-        width: 170px;
+        width: 230px;
         padding:5px;
         font-weight: 500;
         height:3em;

@@ -21,7 +21,7 @@ const Header = () => {
     const showMenuPessoas = ()=>activePessoas === "" ? setActivePessoas("activeMenu") : setActivePessoas("")
 
     const showSideBar = ()=>{ activeSideBar === "" ? setActiveSideBars("activeSideBar") : setActiveSideBars("")}
-
+  
 
   return (
     <HeaderMenu>
