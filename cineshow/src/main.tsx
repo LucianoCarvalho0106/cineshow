@@ -5,6 +5,7 @@ import { GlobalStyle } from '../GlobalStyle';
 import { ChakraProvider } from '@chakra-ui/react';
 import Home from './pages/Home/Home';
 import MovieSingle from './pages/MovieSingle/MovieSingle';
+import FilmesPopulares from './pages/FilmesPopulares/FilmesPopulares';
 
 
 const App = () => {
@@ -17,6 +18,10 @@ const App = () => {
       path: '/movieSingle',
       element: <MovieSingle></MovieSingle>,
     },
+    {
+      path:"/filmesPopulares",
+      element:<FilmesPopulares></FilmesPopulares>
+    }
   ]);
 
 
