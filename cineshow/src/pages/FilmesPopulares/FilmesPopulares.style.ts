@@ -1,5 +1,5 @@
 import {styled} from "styled-components"
-import { ButtonTrailer } from "../MovieSingle/MovieSingle.style"
+
 
 export const Content = styled.div`
     display: flex;

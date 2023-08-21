@@ -6,10 +6,10 @@ import {Grid,H3,Content,Buttons} from "./FilmesPopulares.style"
 import { useNavigate } from "react-router-dom"
 import {FcNext,FcPrevious} from "react-icons/fc"
 
-const FilmesPopulares = () => {
+const FilmesEmCartaz = () => {
 
     const navigate = useNavigate()
-    const ref = useRef<number>(JSON.parse(localStorage.getItem("page")!) || 1)
+    const ref = useRef<number>(JSON.parse(localStorage.getItem("pageCartaz")!) || 1)
     
 
     interface Filme {
@@ -26,7 +26,7 @@ const FilmesPopulares = () => {
         const data = await api.get("movie/popular",{
             params:{
                 language:"pt-BR",
-                page: JSON.parse(localStorage.getItem("page")!) || ref.current,
+                page: JSON.parse(localStorage.getItem("pageCartaz")!) || ref.current,
             }})
 
                 const datas = data.data.results
@@ -35,8 +35,8 @@ const FilmesPopulares = () => {
 
     const verMais = ()=>{
         ref.current +=1
-        localStorage.setItem("page",JSON.stringify(ref.current))
-       const pageJSON:number = JSON.parse(localStorage.getItem("page")!)
+        localStorage.setItem("pageCartaz",JSON.stringify(ref.current))
+       const pageJSON:number = JSON.parse(localStorage.getItem("pageCartaz")!)
         ref.current = pageJSON 
         
         getFilmes()
@@ -44,8 +44,8 @@ const FilmesPopulares = () => {
 
     const verMenos = ()=>{
         ref.current -=1
-        localStorage.setItem("page",JSON.stringify(ref.current))
-        const pageJSON:number = JSON.parse(localStorage.getItem("page")!)
+        localStorage.setItem("pageCartaz",JSON.stringify(ref.current))
+        const pageJSON:number = JSON.parse(localStorage.getItem("pageCartaz")!)
         ref.current = pageJSON 
         
         getFilmes()
@@ -53,12 +53,12 @@ const FilmesPopulares = () => {
 
     
     const navigateFilme = async(id:number,original_title:string)=>{
-        const data = await (await api.get(`movie/${id}-${original_title}`,{
+        const data = await (await api.get(`movie/popular${id}-${original_title}`,{
           params:{
             language:"pt-BR",
           }
         })).data
-        localStorage.setItem("dataFilme",JSON.stringify(data))
+        localStorage.setItem("dataFilmeCartaz",JSON.stringify(data))
         navigate(`/movieSingle`)
       }
     
@@ -89,7 +89,7 @@ const FilmesPopulares = () => {
 
              <Buttons>
                 {
-                    JSON.parse(localStorage.getItem("page")!)  > 1 ? (
+                    JSON.parse(localStorage.getItem("pageCartaz")!)  > 1 ? (
                         <>
                              <FcPrevious size={40} onClick={verMenos} cursor={"pointer"}></FcPrevious>
                                 <FcNext size ={40} onClick={verMais} cursor={"pointer"}></FcNext>
@@ -98,10 +98,10 @@ const FilmesPopulares = () => {
                 }
                
             </Buttons>  
-            <p style={{margin:"0em 0 1em 0"}}>Página: {JSON.parse(localStorage.getItem("page")!) || ref.current}</p>
+            <p style={{margin:"0em 0 1em 0"}}>Página: {JSON.parse(localStorage.getItem("pageCartaz")!) || ref.current}</p>
         </Content>
     </>
   )
 }
 
-export default FilmesPopulares
+export default FilmesEmCartaz

@@ -6,6 +6,7 @@ import { ChakraProvider } from '@chakra-ui/react';
 import Home from './pages/Home/Home';
 import MovieSingle from './pages/MovieSingle/MovieSingle';
 import FilmesPopulares from './pages/FilmesPopulares/FilmesPopulares';
+import FilmesEmCartaz from './pages/FilmesEmCartaz/FilmesEmCartaz';
 
 
 const App = () => {
@@ -21,6 +22,10 @@ const App = () => {
     {
       path:"/filmesPopulares",
       element:<FilmesPopulares></FilmesPopulares>
+    },
+    {
+      path:"/emCartaz",
+      element:<FilmesEmCartaz></FilmesEmCartaz>
     }
   ]);
 
