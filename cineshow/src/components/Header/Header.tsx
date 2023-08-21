@@ -32,7 +32,7 @@ const Header = () => {
                     <MenuList>
                         <MenuItem onClick={()=>navigate("/filmesPopulares")}>Populares</MenuItem>
                         <MenuItem onClick={()=>navigate("/emCartaz")}>Em Cartaz</MenuItem>
-                        <MenuItem>Mais Bem Avaliados</MenuItem>
+                        <MenuItem onClick={()=>navigate("/bemAvaliados")}>Mais Bem Avaliados</MenuItem>
                     </MenuList>
                 
             </Menu>

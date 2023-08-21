@@ -53,13 +53,13 @@ const FilmesEmCartaz = () => {
 
     
     const navigateFilme = async(id:number,original_title:string)=>{
-        const data = await (await api.get(`movie/popular${id}-${original_title}`,{
+        const data = await (await api.get(`movie/${id}-${original_title}`,{
           params:{
             language:"pt-BR",
           }
         })).data
         localStorage.setItem("dataFilmeCartaz",JSON.stringify(data))
-        navigate(`/movieSingle`)
+        navigate(`/movieSinglePopulares`)
       }
     
     useEffect(()=>{

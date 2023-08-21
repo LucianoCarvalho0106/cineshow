@@ -7,7 +7,10 @@ import Home from './pages/Home/Home';
 import MovieSingle from './pages/MovieSingle/MovieSingle';
 import FilmesPopulares from './pages/FilmesPopulares/FilmesPopulares';
 import FilmesEmCartaz from './pages/FilmesEmCartaz/FilmesEmCartaz';
-
+import FilmesBemAvaliados from './pages/FilmesBemAvaliados/FilmesBemAvaliados';
+import MovieSinglePopulares from './pages/MovieSinglePopulares/MovieSinglePopulares';
+import MovieSingleCartaz from './pages/MovieSingleCartaz/MovieSingleCartaz';
+import MovieSingleBemAvaliados from './pages/MovieSingleBemAvaliados/MovieSingleBemAvaliados';
 
 const App = () => {
   const route = createBrowserRouter([
@@ -20,12 +23,28 @@ const App = () => {
       element: <MovieSingle></MovieSingle>,
     },
     {
+      path:"/movieSinglePopulares",
+      element: <MovieSinglePopulares></MovieSinglePopulares>
+    },
+    {
       path:"/filmesPopulares",
       element:<FilmesPopulares></FilmesPopulares>
     },
     {
       path:"/emCartaz",
       element:<FilmesEmCartaz></FilmesEmCartaz>
+    },
+    {
+      path:"/bemAvaliados",
+      element:<FilmesBemAvaliados></FilmesBemAvaliados>
+    },
+    {
+      path:"/movieSingleCartaz",
+      element:<MovieSingleCartaz></MovieSingleCartaz>
+    },
+    {
+      path:"/movieSingleBemAvaliados",
+      element:<MovieSingleBemAvaliados></MovieSingleBemAvaliados>
     }
   ]);
 
