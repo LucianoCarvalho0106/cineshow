@@ -16,8 +16,8 @@ export const ContentAll = styled.div`
 `
 
 export const DivImgFilme = styled.div`
-    height: 320px;
-    width: 230px;
+    height: 310px;
+    width: 400px;
     box-shadow: 16px 19px 18px -8px rgba(0,0,0,0.3);
     & img{
         height: 100%;
