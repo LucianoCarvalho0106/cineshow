@@ -11,6 +11,10 @@ import FilmesBemAvaliados from './pages/FilmesBemAvaliados/FilmesBemAvaliados';
 import MovieSinglePopulares from './pages/MovieSinglePopulares/MovieSinglePopulares';
 import MovieSingleCartaz from './pages/MovieSingleCartaz/MovieSingleCartaz';
 import MovieSingleBemAvaliados from './pages/MovieSingleBemAvaliados/MovieSingleBemAvaliados';
+import MovieSingleSeriesPopulares from './pages/MovieSingleSeriesPopulares/MovieSingleSeriesPopulares';
+import SeriesPopulares from './pages/SeriesPopulares/SeriesPopulares';
+import SeriesMaisBemAvaliadas from './pages/SeriesMaisBemAvaliadas/SeriesMaisBemAvaliadas';
+import MovieSingleSeriesMaisBemAvaliadas from './pages/MovieSingleSeriesMaisBemAvaliadas/MovieSingleSeriesMaisBemAvaliadas';
 
 const App = () => {
   const route = createBrowserRouter([
@@ -45,6 +49,22 @@ const App = () => {
     {
       path:"/movieSingleBemAvaliados",
       element:<MovieSingleBemAvaliados></MovieSingleBemAvaliados>
+    },
+    {
+      path:"/MovieSingleSeriesPopulares",
+      element:<MovieSingleSeriesPopulares></MovieSingleSeriesPopulares>
+    },
+    {
+      path:"/seriesPopulares",
+      element:<SeriesPopulares></SeriesPopulares>
+    },
+    {
+      path:"/MovieSingleSeriesMaisBemAvaliadas",
+      element:<MovieSingleSeriesMaisBemAvaliadas></MovieSingleSeriesMaisBemAvaliadas>
+    },
+    {
+      path:"/seriesMaisBemAvaliadas",
+      element:<SeriesMaisBemAvaliadas></SeriesMaisBemAvaliadas>
     }
   ]);
 

@@ -42,8 +42,8 @@ const Header = () => {
             <Menu>
                 <MenuButton><span>Séries</span></MenuButton>
                 <MenuList>
-                    <MenuItem>Populares</MenuItem>
-                    <MenuItem>Mais Bem Avaliadas</MenuItem>
+                    <MenuItem onClick={()=>navigate("/seriesPopulares")}>Populares</MenuItem>
+                    <MenuItem onClick={()=>navigate("/seriesMaisBemAvaliadas")} >Mais Bem Avaliadas</MenuItem>
                 </MenuList>
             </Menu>
             </div>
