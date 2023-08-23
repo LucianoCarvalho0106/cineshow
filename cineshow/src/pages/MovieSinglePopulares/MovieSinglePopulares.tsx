@@ -12,7 +12,7 @@ const MovieSinglePopulares = () => {
     
     useEffect(()=>{
         console.log(data)
-    })
+    },[])
   return (
     <>
     <Header></Header>
@@ -38,7 +38,7 @@ const MovieSinglePopulares = () => {
                 }
             </Right>
         </ContentAll>
-       <Link style={{display:"block",margin: "0 auto"}} target="_blank" to={`https://www.youtube.com/results?search_query=${data.original_title}+trailer`}>
+       <Link style={{display:"block",margin: "0 auto"}} target="_blank" to={`https://www.youtube.com/results?search_query=${data.title}+trailer`}>
         <ButtonTrailer>Trailer</ButtonTrailer>
        </Link> 
         

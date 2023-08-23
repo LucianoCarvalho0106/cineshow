@@ -15,6 +15,8 @@ import MovieSingleSeriesPopulares from './pages/MovieSingleSeriesPopulares/Movie
 import SeriesPopulares from './pages/SeriesPopulares/SeriesPopulares';
 import SeriesMaisBemAvaliadas from './pages/SeriesMaisBemAvaliadas/SeriesMaisBemAvaliadas';
 import MovieSingleSeriesMaisBemAvaliadas from './pages/MovieSingleSeriesMaisBemAvaliadas/MovieSingleSeriesMaisBemAvaliadas';
+import PessoasPopulares from './pages/PessoasPopulares/PessoasPopulares';
+import MovieSinglePessoasPopulares from './pages/MovieSinglePessoasPopulares/MovieSinglePessoasPopulares';
 
 const App = () => {
   const route = createBrowserRouter([
@@ -65,6 +67,14 @@ const App = () => {
     {
       path:"/seriesMaisBemAvaliadas",
       element:<SeriesMaisBemAvaliadas></SeriesMaisBemAvaliadas>
+    },
+    {
+      path:"/pessoasPopulares",
+      element:<PessoasPopulares></PessoasPopulares>
+    },
+    {
+      path:"/MovieSinglePessoasPopulares",
+      element:<MovieSinglePessoasPopulares></MovieSinglePessoasPopulares>
     }
   ]);
 

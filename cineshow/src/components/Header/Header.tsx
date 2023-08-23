@@ -52,7 +52,7 @@ const Header = () => {
                 <Menu>
                     <MenuButton>Pessoas</MenuButton>
                     <MenuList>
-                        <MenuItem>Pessoas Populares</MenuItem>
+                        <MenuItem onClick={()=>navigate("/pessoasPopulares")}>Pessoas Populares</MenuItem>
                     </MenuList>
                 </Menu>
             </div>

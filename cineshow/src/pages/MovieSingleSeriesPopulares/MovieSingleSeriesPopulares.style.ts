@@ -10,6 +10,7 @@ export const MovieSilgleContent = styled.div`
 export const ContentAll = styled.div`
     width: 100%;
     display: flex;
+    flex-wrap:wrap;
     justify-content: center;
     align-items: center;
     gap: 2em;
@@ -31,6 +32,9 @@ export const Title = styled.h1`
     font-weight: 600;
     font-size: 1.3em;
     margin-bottom:1em;
+    @media (max-width: 705px){
+        text-align:center;
+    }
 `
 
 export const Avaliacao = styled.p`
@@ -52,6 +56,10 @@ export const Sinopse = styled.p`
 
 export const Right = styled.div`
     max-width: 50%;
+    @media (max-width: 705px){
+        max-width: 90%;
+        margin-bottom:2em;
+    }
 `
 export const ButtonTrailer = styled.button`
     border: 0;
@@ -65,4 +73,7 @@ export const ButtonTrailer = styled.button`
     color: #fff;
     letter-spacing: 1px;
     box-shadow: 16px 17px 18px -8px rgba(0,0,0,0.3);
+    @media (max-width:705px){
+        margin-bottom:2em;
+    }
 `

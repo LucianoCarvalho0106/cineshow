@@ -17,8 +17,8 @@ export const ContentAll = styled.div`
 `
 
 export const DivImgFilme = styled.div`
-    height: 310px;
-    width: 400px;
+    height: 400px;
+    width: 320px;
     box-shadow: 16px 19px 18px -8px rgba(0,0,0,0.3);
     & img{
         height: 100%;
@@ -33,7 +33,7 @@ export const Title = styled.h1`
     font-size: 1.3em;
     margin-bottom:1em;
     @media (max-width: 705px){
-        text-align:center;
+        margin:1em auto;
     }
 `
 
@@ -72,8 +72,16 @@ export const ButtonTrailer = styled.button`
     font-weight:600;
     color: #fff;
     letter-spacing: 1px;
-    box-shadow: 16px 17px 18px -8px rgba(0,0,0,0.3);
-    @media (max-width:705px){
-        margin-bottom:2em;
-    }
+`
+
+export const Biografia = styled.div`
+    text-align: justify;
+    width: 100%;
+`
+
+export const Flex = styled.div`
+    width: 100%;
+    display:flex;
+    align-items: center;
+    flex-wrap: wrap;
 `
