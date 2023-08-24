@@ -1,22 +1,39 @@
 
 import {FaVideo} from "react-icons/fa"
-import {Link, useNavigate} from "react-router-dom"
+import {Link,useNavigate,redirect} from "react-router-dom"
 import { Menus, HeaderMenu,Search,ContentMenu,ButtonMenu} from "./Header.style"
-import { useState } from "react"
+import { useState,useContext,useEffect } from "react"
 import {BsSearch} from "react-icons/bs"
 import {RiMenu4Fill} from "react-icons/ri"
 import { Menu,MenuButton,MenuList,MenuItem } from "@chakra-ui/react"
+import api from "../../services/api"
+import Context from "../../context/context"
+
 
 
 const Header = () => {
-   
+
+    const [value,setValue] = useContext<any>(Context)
     const navigate = useNavigate()
+    
     const [ activeSideBar,setActiveSideBars] = useState<string>("")
     const [searchInput,setSearchInput] = useState<any>([])
+    const [movies,setMovies] = useState<any>([])
+    const [series,setSeries] = useState<any>([])
+    const [pessoas,setPessoas] = useState<any>([])
     
     const showSideBar = ()=>{ activeSideBar === "" ? setActiveSideBars("activeSideBar") : setActiveSideBars("")}
   
+    const handleSearch = async()=>{
+       const data =  (await api.get(`search/multi?`,{params:{query:`${searchInput}`,language:"pt-BR"}})).data.results[0]
+       if(data.media_type === "person"){
+        setValue(data)
+        navigate("/SearchPessoasPopulares")
+       }
+    }
     
+    
+   
 
   return (
     <HeaderMenu>
@@ -59,7 +76,7 @@ const Header = () => {
        </Menus>
        <Search>
                 <input placeholder="Filmes, Séries ou Pessoas ..." type="text" value={searchInput} onChange={(e)=>setSearchInput(e.target.value)} />
-                <button>
+                <button onClick={handleSearch}>
                     <BsSearch color={"#fff"} size={17}></BsSearch>
                 </button>
         </Search>

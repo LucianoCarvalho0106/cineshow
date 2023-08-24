@@ -6,20 +6,35 @@ import api from "../../services/api"
 
 
 const MovieSinglePessoasPopulares = () => {
+
+    interface IKnowFor {
+        id:number,
+        backdrop_path:string,
+        title:string,
+        overview:string
+    }
     
+    interface IFilmes {
+        id:number,
+        name:string,
+        known_for: IKnowFor []
+    }
+
     const dataLocal = localStorage.getItem("dataPessoasPopulares")
     const data = JSON.parse(dataLocal!)
 
     const [person,setPerson] = useState<any>([])
+    const [filmes,setFilmes] = useState<IFilmes>()
 
     
     useEffect(()=>{
        const getPerson = async(id:number)=>{
             const data = (await api.get(`person/${id}`,{params:{language:"pt-BR"}})).data
             setPerson(data)
-            console.log(data)
        }
+       
        getPerson(data.id)
+       
     },[])
 
   return (
@@ -45,7 +60,6 @@ const MovieSinglePessoasPopulares = () => {
             </Right>
             
         </ContentAll>
-        
     </MovieSilgleContent>
     </>
  

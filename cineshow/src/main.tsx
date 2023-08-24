@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import ReactDOM from 'react-dom/client';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import { GlobalStyle } from '../GlobalStyle';
@@ -17,8 +17,12 @@ import SeriesMaisBemAvaliadas from './pages/SeriesMaisBemAvaliadas/SeriesMaisBem
 import MovieSingleSeriesMaisBemAvaliadas from './pages/MovieSingleSeriesMaisBemAvaliadas/MovieSingleSeriesMaisBemAvaliadas';
 import PessoasPopulares from './pages/PessoasPopulares/PessoasPopulares';
 import MovieSinglePessoasPopulares from './pages/MovieSinglePessoasPopulares/MovieSinglePessoasPopulares';
+import Context from './context/context';
+import SearchPessoasPopulares from './pages/SearchPessoasPopulares/SearchPessoasPopulares';
 
 const App = () => {
+
+  const [value,setValue] = useState<any>([])
   const route = createBrowserRouter([
     {
       path: '/',
@@ -75,6 +79,10 @@ const App = () => {
     {
       path:"/MovieSinglePessoasPopulares",
       element:<MovieSinglePessoasPopulares></MovieSinglePessoasPopulares>
+    },
+    {
+      path:"/SearchPessoasPopulares",
+      element:<SearchPessoasPopulares></SearchPessoasPopulares>
     }
   ]);
 
@@ -82,7 +90,9 @@ const App = () => {
   return (
     <React.StrictMode>
       <ChakraProvider>
+        <Context.Provider value={[value,setValue]}>
           <RouterProvider router={route}></RouterProvider>
+        </Context.Provider>
         <GlobalStyle></GlobalStyle>
       </ChakraProvider>
     </React.StrictMode>

@@ -71,7 +71,7 @@ const PessoasPopulares = () => {
     <>
         <Content>
             <Header></Header>
-            <H3>Filmes Populares</H3>
+            <H3>Pessoas Populares</H3>
             
             <Grid>
                 {
