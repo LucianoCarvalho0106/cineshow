@@ -18,7 +18,6 @@ const SearchPessoasPopulares = () => {
     
     const serchPersonDetails = async()=>{
         const data = (await api.get(`person/${value.id}?language=pt-BR`)).data
-        const sesionLocal = sessionStorage.setItem("personData",JSON.stringify(data))
         setPerson(data)
     }
 

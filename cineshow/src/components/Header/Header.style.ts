@@ -1,12 +1,11 @@
 import {styled} from "styled-components"
 
-export const MenuListStyle = styled.div`
-    color: yellow;
-`
+
 
 
 export const HeaderMenu = styled.header`
-    position: relative;
+    position: sticky;
+    top:0;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -17,6 +16,7 @@ export const HeaderMenu = styled.header`
     margin: 0 auto;
     box-shadow: 0px 21px 15px -3px rgba(0,0,0,0.1);
     z-index:10;
+    background-color:#fff;
     
     .activeSideBar{
         width: 60%;

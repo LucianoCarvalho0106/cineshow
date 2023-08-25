@@ -32,8 +32,8 @@ export const Title = styled.h1`
     font-weight: 600;
     font-size: 1.3em;
     margin-bottom:1em;
-    margin-top:1em;
     text-align:center;
+    margin-top:1em;
     @media (max-width: 705px){
         text-align:center;
     }
@@ -45,6 +45,7 @@ export const Avaliacao = styled.p`
     justify-content:center;
     gap:10px;
     margin: .7em 0;
+    text-align:center;
 `
 
 export const Sinopse = styled.p`
@@ -72,16 +73,16 @@ export const ButtonTrailer = styled.button`
     background-color:#4385F3;
     width: 15em;
     padding:.7em 2em;
-    margin: 1em auto 4em auto;
+    margin: 0 auto;
     font-weight:600;
     color: #fff;
     letter-spacing: 1px;
+    margin: 1em 0 6em 0;
     box-shadow: 16px 17px 18px -8px rgba(0,0,0,0.3);
     @media (max-width:705px){
         margin-bottom:2em;
     }
 `
-
 export const Center = styled.div`
     width: 100%;
     display: flex;

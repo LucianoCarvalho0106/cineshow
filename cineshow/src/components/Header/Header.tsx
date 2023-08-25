@@ -25,13 +25,17 @@ const Header = () => {
     const showSideBar = ()=>{ activeSideBar === "" ? setActiveSideBars("activeSideBar") : setActiveSideBars("")}
   
     const handleSearch = async()=>{
-       const data =  (await api.get(`search/multi?`,{params:{query:`${searchInput}`,language:"pt-BR"}})).data.results[0]
-       if(data.media_type === "person"){
-        setValue(data)
+       const data =  (await api.get(`search/multi?`,{params:{query:`${searchInput}`,language:"pt-BR"}})).data.results
+       
+       if(data[0].media_type === "person"){
+        setValue(data[0])
         navigate("/SearchPessoasPopulares")
-       } else if(data.media_type === "tv"){
+       } else if(data[0].media_type === "tv"){
         setValue(data)
         navigate("/SearchSeriesPopulares")
+       }else if(data[0].media_type === "movie"){
+        setValue(data)
+        navigate("/searchFilmes")
        }
     }
     

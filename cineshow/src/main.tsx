@@ -20,6 +20,7 @@ import MovieSinglePessoasPopulares from './pages/MovieSinglePessoasPopulares/Mov
 import Context from './context/context';
 import SearchPessoasPopulares from './pages/SearchPessoasPopulares/SearchPessoasPopulares';
 import SearchSeriesPopulares from './pages/SearchSingleSeriesPopulares/SearchSeriesPopulares';
+import SearchFilmes from './pages/SearchFilmes/SearchFilmes';
 
 const App = () => {
 
@@ -88,6 +89,10 @@ const App = () => {
     {
       path:"/searchSeriesPopulares",
       element:<SearchSeriesPopulares></SearchSeriesPopulares>
+    },
+    {
+      path:"/searchFilmes",
+      element:<SearchFilmes></SearchFilmes>
     }
   ]);
 
