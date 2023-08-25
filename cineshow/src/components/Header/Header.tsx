@@ -29,6 +29,9 @@ const Header = () => {
        if(data.media_type === "person"){
         setValue(data)
         navigate("/SearchPessoasPopulares")
+       } else if(data.media_type === "tv"){
+        setValue(data)
+        navigate("/SearchSeriesPopulares")
        }
     }
     

@@ -71,7 +71,7 @@ const SeriesPopulares = () => {
     <>
         <Content>
             <Header></Header>
-            <H3>Filmes Populares</H3>
+            <H3>Séries Populares</H3>
             
             <Grid>
                 {

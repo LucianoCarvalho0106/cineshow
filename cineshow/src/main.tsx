@@ -19,6 +19,7 @@ import PessoasPopulares from './pages/PessoasPopulares/PessoasPopulares';
 import MovieSinglePessoasPopulares from './pages/MovieSinglePessoasPopulares/MovieSinglePessoasPopulares';
 import Context from './context/context';
 import SearchPessoasPopulares from './pages/SearchPessoasPopulares/SearchPessoasPopulares';
+import SearchSeriesPopulares from './pages/SearchSingleSeriesPopulares/SearchSeriesPopulares';
 
 const App = () => {
 
@@ -83,6 +84,10 @@ const App = () => {
     {
       path:"/SearchPessoasPopulares",
       element:<SearchPessoasPopulares></SearchPessoasPopulares>
+    },
+    {
+      path:"/searchSeriesPopulares",
+      element:<SearchSeriesPopulares></SearchSeriesPopulares>
     }
   ]);
 
