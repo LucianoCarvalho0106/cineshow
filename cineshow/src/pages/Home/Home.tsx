@@ -13,7 +13,7 @@ import {Navigation,Mousewheel,Scrollbar} from 'swiper/modules';
 const Home = ( )=> {
 
   const navigate = useNavigate()
-  const [slidePerView,setSlidePerView] = useState<number>(4)
+  const [slidePerView,setSliderPerView] = useState<number>(5)
   interface IEmCartaz {
     title:string,
     original_title:string
@@ -24,6 +24,7 @@ const Home = ( )=> {
   const [emCartaz,setEmCartaz] = useState<IEmCartaz[]>([])
   const [populares,setPopulares] = useState<IEmCartaz[]>([])
   const [bemAvaliados,setBemAvaliados] = useState<IEmCartaz[]>([])
+  const [space,] = useState(0)
 
   
 
@@ -39,8 +40,8 @@ const Home = ( )=> {
 
   useEffect(()=>{
     const getEmCartaz = async()=>{
-      const data = await (await api.get("movie/now_playing/",{
-        params:{language:"pt-BR",page:1}
+      const data = await (await api.get("movie/now_playing",{
+        params:{language:"pt-BR"}
       })).data
 
       const slice = data.results.slice(0,10)
@@ -61,20 +62,33 @@ const Home = ( )=> {
       
     }
 
-    const resize = ()=>{
-      if(window.innerWidth < 1200){
-        setSlidePerView(3)
-      } else if(window.innerWidth > 1200){
-        setSlidePerView(4)
+    const resizes = ()=>{
+
+      
+
+      if(window.innerWidth < 1281){
+        setSliderPerView(5)
       }
+
+      if(window.innerWidth < 1025){
+        setSliderPerView(4)
+      }
+      if(window.innerWidth < 822){
+        setSliderPerView(3)
+      }
+      if(window.innerWidth < 420){
+        //setSpace(160)
+        setSliderPerView(2)
+      }
+      
     }
-    window.addEventListener("resize",resize)
+    window.addEventListener("resize",resizes)
     getBemAvaliados()
     getPopulares()
     getEmCartaz()
-    resize()
+    resizes()
     return ()=>{
-      window.removeEventListener("resize",resize)
+      window.removeEventListener("resize",resizes)
     }
   },[])
   return (
@@ -86,7 +100,7 @@ const Home = ( )=> {
               <Swiper 
               modules={[Navigation,Mousewheel,Scrollbar]}
               slidesPerView={slidePerView} 
-              spaceBetween={-300}
+              spaceBetween={space}
               navigation
               mousewheel= {true}
               >
@@ -95,8 +109,7 @@ const Home = ( )=> {
                   return(
                     <SwiperSlide key={filme.id}>
                       <div onClick={()=>navigateFilme(filme.id,filme.original_title)} >
-                      <CardMovie  id={filme.id} src={`https://image.tmdb.org/t/p/original/${filme.poster_path
-}`} title={filme.title}></CardMovie>
+                      <CardMovie  id={filme.id} src={`https://image.tmdb.org/t/p/original/${filme.poster_path}`} title={filme.title}></CardMovie>
                       </div>
                     </SwiperSlide>
                   )
@@ -110,7 +123,7 @@ const Home = ( )=> {
               <Swiper 
               modules={[Navigation,Mousewheel,Scrollbar]}
               slidesPerView={slidePerView} 
-              spaceBetween={-290}
+              spaceBetween={space}
               navigation
               mousewheel= {true}
               >
@@ -133,7 +146,7 @@ const Home = ( )=> {
               <Swiper 
               modules={[Navigation,Mousewheel,Scrollbar]}
               slidesPerView={slidePerView} 
-              spaceBetween={-290}
+              spaceBetween={space}
               navigation
               mousewheel= {true}
               >

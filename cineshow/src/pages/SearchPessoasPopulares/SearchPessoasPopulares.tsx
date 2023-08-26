@@ -11,9 +11,9 @@ import api from "../../services/api"
 
 const SearchPessoasPopulares = () => {
 
-    const [value,setValue] = useContext(Context)
+    const [value,] = useContext(Context)
     const [person,setPerson] = useState<any>([])
-    const [session,setSession] = useState<any>([])
+    
 
     
     const serchPersonDetails = async()=>{

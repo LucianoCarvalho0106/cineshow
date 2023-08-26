@@ -26,6 +26,10 @@ export const DivImgFilme = styled.div`
         object-fit: cover;
         border-radius: 4px;
     }
+    @media (max-width: 705px){
+        width:90%;
+        height: 100%;
+    }
 `
 
 export const Title = styled.h1`

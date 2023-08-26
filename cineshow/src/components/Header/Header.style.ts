@@ -21,6 +21,11 @@ export const HeaderMenu = styled.header`
     .activeSideBar{
         width: 60%;
     }
+    @media (max-width:600px){
+        .activeSideBar{
+        width: 75%;
+    }
+    }
 
 `
 

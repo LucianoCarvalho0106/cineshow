@@ -1,8 +1,8 @@
 
 import {FaVideo} from "react-icons/fa"
-import {Link,useNavigate,redirect} from "react-router-dom"
+import {useNavigate} from "react-router-dom"
 import { Menus, HeaderMenu,Search,ContentMenu,ButtonMenu} from "./Header.style"
-import { useState,useContext,useEffect } from "react"
+import { useState,useContext } from "react"
 import {BsSearch} from "react-icons/bs"
 import {RiMenu4Fill} from "react-icons/ri"
 import { Menu,MenuButton,MenuList,MenuItem } from "@chakra-ui/react"
@@ -11,16 +11,15 @@ import Context from "../../context/context"
 
 
 
+
 const Header = () => {
 
-    const [value,setValue] = useContext<any>(Context)
+    const [,setValue] = useContext<any>(Context)
     const navigate = useNavigate()
     
     const [ activeSideBar,setActiveSideBars] = useState<string>("")
     const [searchInput,setSearchInput] = useState<any>([])
-    const [movies,setMovies] = useState<any>([])
-    const [series,setSeries] = useState<any>([])
-    const [pessoas,setPessoas] = useState<any>([])
+   
     
     const showSideBar = ()=>{ activeSideBar === "" ? setActiveSideBars("activeSideBar") : setActiveSideBars("")}
   
@@ -28,12 +27,14 @@ const Header = () => {
        const data =  (await api.get(`search/multi?`,{params:{query:`${searchInput}`,language:"pt-BR"}})).data.results
        
        if(data[0].media_type === "person"){
-        setValue(data[0])
+        setValue(data[0]) 
         navigate("/SearchPessoasPopulares")
        } else if(data[0].media_type === "tv"){
+        
         setValue(data)
         navigate("/SearchSeriesPopulares")
        }else if(data[0].media_type === "movie"){
+        
         setValue(data)
         navigate("/searchFilmes")
        }
@@ -44,7 +45,7 @@ const Header = () => {
 
   return (
     <HeaderMenu>
-       <FaVideo onClick={()=>navigate("/")}  size={40}></FaVideo>
+       <FaVideo onClick={()=>navigate("/")} cursor={"pointer"}  size={40}></FaVideo>
        
        <ContentMenu className={activeSideBar}>
         

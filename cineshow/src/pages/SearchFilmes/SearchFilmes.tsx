@@ -1,8 +1,7 @@
 import {MovieSilgleContent,ContentAll,DivImgFilme,Title,Avaliacao,Sinopse,Right,ButtonTrailer,Center} from "./SearchFilmes.style"
 import Header from "../../components/Header/Header"
-import {useContext, useEffect,useRef} from "react"
+import {useContext} from "react"
 import {AiOutlineStar} from "react-icons/ai"
-import {BiTimeFive} from "react-icons/bi"
 import {Link} from "react-router-dom"
 import Context from "../../context/context"
 
@@ -10,7 +9,7 @@ const SearchFilmes = () => {
     
     
 
-    const [value,setValue] = useContext(Context)
+    const [value,] = useContext(Context)
 
   return (
     <>

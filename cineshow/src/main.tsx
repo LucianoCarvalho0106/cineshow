@@ -22,6 +22,7 @@ import SearchPessoasPopulares from './pages/SearchPessoasPopulares/SearchPessoas
 import SearchSeriesPopulares from './pages/SearchSingleSeriesPopulares/SearchSeriesPopulares';
 import SearchFilmes from './pages/SearchFilmes/SearchFilmes';
 
+
 const App = () => {
 
   const [value,setValue] = useState<any>([])

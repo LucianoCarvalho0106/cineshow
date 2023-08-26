@@ -1,6 +1,6 @@
 import {MovieSilgleContent,ContentAll,DivImgFilme,Title,Avaliacao,Sinopse,Right,ButtonTrailer} from "./MovieSingleBemAvaliados.style"
 import Header from "../../components/Header/Header"
-import {useEffect,useRef} from "react"
+import {useEffect} from "react"
 import {AiOutlineStar} from "react-icons/ai"
 import {BiTimeFive} from "react-icons/bi"
 import {Link} from "react-router-dom"

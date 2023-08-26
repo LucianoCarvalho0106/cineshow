@@ -10,6 +10,14 @@ export const Card = styled.div`
     box-shadow: -4px 29px 22px -18px rgba(0,0,0,0.5);
     cursor: pointer;
     overflow: hidden;
+    @media (max-width:600px){
+        width: 200px;
+        height: 250px;
+    }
+    @media (max-width:450px){
+        width: 160px;
+        height: 200px;
+    }
     
     &:hover img{
         transform: scale(1.05);
@@ -35,5 +43,14 @@ export const Card = styled.div`
         z-index:5;
         background-color: #032541;
         color: #fff;
+        
+        @media (max-width:600px){
+        width: 200px;
+        }
+
+        @media (max-width:450px){
+        width: 160px;
+        
+        }
     }
 `
