@@ -7,7 +7,9 @@ import 'swiper/css';
 import {HomeContent} from "./Home.style"
 import { useNavigate } from "react-router-dom";
 import 'swiper/css/pagination';
-import {Navigation,Mousewheel,Scrollbar} from 'swiper/modules';
+import {Navigation,Mousewheel,Scrollbar,Pagination,Autoplay} from 'swiper/modules';
+import 'swiper/css/navigation';
+
 
 
 const Home = ( )=> {
@@ -98,11 +100,14 @@ const Home = ( )=> {
             <div>
               <h3>Filmes Em Cartaz</h3>
               <Swiper 
-              modules={[Navigation,Mousewheel,Scrollbar]}
+              modules={[Navigation,Mousewheel,Scrollbar,Pagination,Autoplay]}
               slidesPerView={slidePerView} 
               spaceBetween={space}
-              navigation
               mousewheel= {true}
+              autoplay={{
+                delay: 2300,
+                disableOnInteraction: false,
+              }}
               >
               {
                 emCartaz.map(filme=>{
@@ -121,11 +126,15 @@ const Home = ( )=> {
             <div>
               <h3>Populares</h3>
               <Swiper 
-              modules={[Navigation,Mousewheel,Scrollbar]}
+              modules={[Navigation,Mousewheel,Scrollbar,Autoplay]}
               slidesPerView={slidePerView} 
               spaceBetween={space}
-              navigation
+              
               mousewheel= {true}
+              autoplay={{
+                delay: 2500,
+                disableOnInteraction: false,
+              }}
               >
               {
                 populares.map((filme)=>{
@@ -144,11 +153,15 @@ const Home = ( )=> {
             <div>
               <h3>Mais Bem Avaliados</h3>
               <Swiper 
-              modules={[Navigation,Mousewheel,Scrollbar]}
+              modules={[Navigation,Mousewheel,Scrollbar,Autoplay]}
               slidesPerView={slidePerView} 
               spaceBetween={space}
-              navigation
+              
               mousewheel= {true}
+              autoplay={{
+                delay: 2100,
+                disableOnInteraction: false,
+              }}
               >
               {
                 bemAvaliados.map((filme)=>{
